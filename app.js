@@ -15,7 +15,7 @@ app.use((req, res, next) => {
 
 
 admin.initializeApp({
-  credential: admin.credential.cert(process.env.FIREBASE_CONFIG_PATH),
+  credential: admin.credential.cert(JSON.parse(process.env.FIREBASE_CONFIG)),
   databaseURL: process.env.FIREBASE_DATABASE_URL
 });
 
