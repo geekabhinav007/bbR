@@ -84,7 +84,7 @@ router.post("/success", async (req, res) => {
             date: new Date().toLocaleString(),
             orderPrice: Number(totalPrice/100),
         };
-        await axios.post('https://bbr-vku7.onrender.com//order/add', { uid, order });
+        await axios.post('https://bbr-vku7.onrender.com/order/add', { uid, order });
 
 
         res.json({
