@@ -1,4 +1,5 @@
-require("dotenv").config();
+const dotenv = require("dotenv")
+dotenv.config();
 const express = require("express");
 
 const app = express();
@@ -12,11 +13,10 @@ app.use((req, res, next) => {
   next();
 });
 
-var serviceAccount = require("./key.json");
 
 admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-  databaseURL: "https://xingoda-e4195-default-rtdb.firebaseio.com"
+  credential: admin.credential.cert(process.env.FIREBASE_CONFIG_PATH),
+  databaseURL: process.env.FIREBASE_DATABASE_URL
 });
 
 
